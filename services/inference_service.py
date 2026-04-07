@@ -31,6 +31,6 @@ def run_inference(app: FastAPI, file: UploadFile = File(...)):
     return {
         'class': label,
         'score': score,
-        'inference_time (s)': inference_time,
-        'model_loading_time (s)': app.state.model_loading_time
+        # 'inference_time (s)': inference_time,
+        # 'model_loading_time (s)': app.state.model_loading_time
     }
