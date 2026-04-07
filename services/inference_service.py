@@ -1,4 +1,4 @@
-import time
+# import time
 from PIL import Image
 
 import torch
@@ -6,7 +6,7 @@ from fastapi import FastAPI, File, UploadFile
 
 
 def run_inference(app: FastAPI, file: UploadFile = File(...)):
-    start_time = time.time()
+    # start_time = time.time()
     
     # Read and preprocess the image
     image = Image.open(file.file).convert('RGB')
@@ -26,7 +26,7 @@ def run_inference(app: FastAPI, file: UploadFile = File(...)):
     if round(score,1) < 0.5:
         label = "Unknown"
 
-    inference_time = time.time() - start_time
+    # inference_time = time.time() - start_time
 
     return {
         'class': label,
